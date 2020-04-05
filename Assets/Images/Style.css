@@ -1,0 +1,41 @@
+.profile {
+    border-radius: 2px;
+    float: left;
+    width: 195px;
+    height: 160px;
+    transform: rotate(270deg);
+}
+h1 {
+    font-family: 'Gotu', sans-serif;
+
+}
+h4 {
+    font-family: 'Gotu', sans-serif;
+}
+.col-7 {
+    padding: 10px;
+    background-color: RGB(255, 218, 193);
+    position: relative ; top: 20px;
+    border-radius: 25px;
+}
+ul {
+    float: right;
+}
+body {
+    background-image: url('bkg img.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.footer {
+    background-color: aqua);
+    position: absolute; bottom: 0px;
+    width: 100%;
+    text-align: center;  
+}
+.portfolio {
+    padding: 10px;
+    background-color: RGB(255, 218, 193);
+    position: relative ; top: 20px;
+    border-radius: 25px;
+}
