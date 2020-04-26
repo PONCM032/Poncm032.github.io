@@ -25,7 +25,11 @@ var secondsLeft = "60";
 var divanswers = document.querySelector("#showOptions");
 var options = document.querySelector("#showAnwers");
 const questionsEl = document.getElementById("questions");
-const optionsEl = document.getElementById("showOptions")
+const optionsEl = document.getElementById("showOptions");
+const op1 = document.querySelector("option1");
+const op2 = document.querySelector("option2");
+const op3 = document.querySelector("option3");
+const op4 = document.querySelector("option4");
 
 divStart = document.querySelector("#start");
 divStartButton = document.querySelector("#startbtn");
@@ -69,6 +73,7 @@ function SetQuestion (){
 function showQuestion(questions) {
     questionsEl.innerText= questions.questions;
 }
+
 function quizTimer() {
     var timerTime = setInterval(function() {
         secondsLeft--;
