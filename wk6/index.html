@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ 
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <!--city list/ create local variable to save here even when refreshed-->
+                    <div id="inputDiv">
+                        <br>
+                        <h3>Search for a city</h3>
+                        <input class="form-control" name="server" id="inputText" placeholder="City, State (if outside USA, input Country">
+                        <button id="inputButton" class="btn btn-primary btn-lg"><img src="search-black-18dp.svg"></button>
+                       
+                    </div>
+                    <div id="listDiv">
+                        <ul id="cityList"> insert city list</ul>
+                    </div>    
+            </div>
+            <div class="col-8">
+                <!-- current weather-->
+                    <div id="currentWeather"> 
+                        <div class="cityName">
+                            <img id="wicon" src="" alt="Weather icon">
+                        </div>
+                        <br>
+                        <div class="temperature"></div>
+                        <div class="humidity"></div>
+                        <div class="windspeed"></div>
+                        <div class="uvIndex"></div>
+
+                    </div>
+                <!-- future 5 day forecast weather-->
+                    <div id="futureWeather">
+                        <br>
+                        <h3>5 Day Forecast</h3>
+                        <div class="row">
+                            <div class="col-3" class="day1">1</div>
+                            <div class="col-3" class="day2">2</div>
+                            <div class="col-3" class="day3">3</div>
+                            <div class="col-3" class="day4">4</div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+</body>
+
+</html>
