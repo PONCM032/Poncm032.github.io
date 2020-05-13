@@ -4,45 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melanie Ponce</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Style.css"/>
+    <!--CSS Frameworks + FontSyle-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="wk2/Images/Style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Melanie Ponce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="Index.html">About <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <!--Navbar-->
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-7" id="profile">    
-                <h1>About Me</h1>
-                <hr>
-                <br>
-                <img class="profile" src="IMG_0691.JPG"/> 
-                <h4>Born in Peru, Melanie immigrated to the United States where she currently resides. If asked about her dreams and aspirations, she will state that "quarter life crisis is hard" and that "finding an aspiration when [she] was younger was difficult because of the endless loop of overachievements [she] had to keep up since being an example immigrant child didn't allow [her] to think outside the box".</h4>
-                <br>
-                <h4>Her favorite things to do during the quaratine are worrying about her career prospects, playing Animal Crossing: New Horizons in the Nintendo Switch, and watching The Untamed in Netflix.</h4>
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="Index.html">
+                        <span class="uk-icon uk-margin-small-right" ></span>
+                        Bio
+                    </a>
+                </li>
+            </ul>
+            <ul class="uk-navbar-nav">
+            <li>
+                <a href="wk2/Images/portfolio.html">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                    Portfolio
+                </a>
+            </li>
+        </ul>
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="wk2/Images/contact.html">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                    Contact
+                </a>
+            </li>
+        </ul>
+        </div>
+    </nav>  
+  <!--Banner-->
+  <div class="bannerImage">
+    <img src="wk2/Images/images/nameBanner.png">
+  </div>
+  <!--Grid-->
+    <div class="uk-grid-large uk-child-width-expand@s uk-text-left" uk-grid id="profileDiv"> 
+        <div class="uk-grid-item-match">
+            <div class="uk-card uk-card-default uk-card-body uk-width-3-5">
+            <h3>Meet Me!</h3>
+            <p>
+                Born in Peru, Melanie immigrated to the United States where she currently resides. If asked about her dreams and aspirations, she will state that "quarter life crisis is hard" and that "finding an aspiration when [she] was younger was difficult because of the endless loop of overachievements [she] had to keep up since being an example immigrant child didn't allow [her] to think outside the box. Her favorite things to do during the quaratine are worrying about her career prospects, playing Animal Crossing: New Horizons in the Nintendo Switch, and watching The Untamed in Netflix.
+            </p>
+            </div>
+            <div class="uk-card uk-card-body uk-width-2-5">
+            <div>
+            <img src="wk2/Images/images/ProfileImage.JPG" class="profile">
+            </div>
             </div>
         </div>
     </div>
-    <div class="footer" id="footer">
+   <!--Footer-->
+   <div class="footer" id="footer">
         <div class="row">
             <div class="col-12">
                 <h4>Thank you!</h4>

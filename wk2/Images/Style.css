@@ -1,9 +1,7 @@
 .profile {
-    border-radius: 2px;
-    float: left;
-    width: 195px;
-    height: 160px;
     transform: rotate(270deg);
+    padding: 25px;
+    margin-block: center;
 }
 h1 {
     font-family: 'Gotu', sans-serif;
@@ -21,15 +19,15 @@ h4 {
 ul {
     float: right;
 }
-body {
-    background-image: url('bkg img.jpg');
-    background-repeat: no-repeat;
+html {
+    background-image: url("images/beach\ bkg.jpg");
+    background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 .footer {
-    background-color: yellow;
-    position: absolute; 
+    background-color: lightblue;
+    position: fixed; 
     bottom: 0px;
     width: 100%;
     text-align: center;  
@@ -39,4 +37,22 @@ body {
     background-color: RGB(255, 218, 193);
     position: relative ; top: 20px;
     border-radius: 25px;
+}
+
+#logoImage {
+    width:15px;
+    height:15px;
+}
+
+#profileDiv {
+    padding: 25px;
+    float: center;
+}
+.bannerImage {
+    background-color: #d9effc;
+    text-align: center;
+}
+
+#portfolioDiv {
+    align-items: center;
 }

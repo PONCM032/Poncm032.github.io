@@ -4,79 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melanie Ponce</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--CSS Frameworks + FontSyle-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="Style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
 </head>
 <body>
   <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Melanie Ponce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="Index.html">About <span class="sr-only">(current)</span></a>
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="Index.html">
+                    <span class="uk-icon uk-margin-small-right" ></span>
+                    Bio
+                </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-    <br>
+        </ul>
+        <ul class="uk-navbar-nav">
+        <li>
+            <a href="wk2/Images/portfolio.html">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                Portfolio
+            </a>
+        </li>
+    </ul>
+    <ul class="uk-navbar-nav">
+        <li>
+            <a href="wk2/Images/contact.html">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                Contact
+            </a>
+        </li>
+    </ul>
+    </div>
+</nav>  
     <!--Cards-->
-      <div class="container" id="portfolio">
-        <div class="row">
-            <div class="col-6" id="profile">    
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body"></div>
-                    <p class="card-text">Word Guess</p>
-                </div>
-             </div>   
-             <div class="col-6" id="profile">    
-                 <div class="card" style="width: 18rem;">
-                     <img src="..." class="card-img-top" alt="...">
-                     <div class="card-body"></div>
-                     <p class="card-text">RPG Game</p>
-                 </div>
-            </div>
-         </div>
-         <br>
-         <div class="row">
-          <div class="col-6" id="profile">    
-              <div class="card" style="width: 18rem;">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body"></div>
-                  <p class="card-text">Info Widget</p>
+  <br>
+  <div uk-grid class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@s uk-text-righ uk-margin-medium" id="portfolioDiv">
+    <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
+      <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="images/Logo.png">
               </div>
-           </div>   
-           <div class="col-6" id="profile">    
-               <div class="card" style="width: 18rem;">
-                   <img src="..." class="card-img-top" alt="...">
-                   <div class="card-body"></div>
-                   <p class="card-text">Trivia Game</p>
-               </div>
+              <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                  <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+              </div>
           </div>
-       </div>
-       <br>
-       <div class="row">
-         <div class="col-6" id="profile">    
-             <div class="card" style="width: 18rem;">
-                 <img src="..." class="card-img-top" alt="...">
-                 <div class="card-body"></div>
-                 <p class="card-text">Rock Paper Scissors</p>
-             </div>
-        </div>
-     </div>
       </div>
-      
+      <div class="uk-card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+      <div class="uk-card-footer">
+          <a href="#" class="uk-button uk-button-text">Read more</a>
+      </div>
+    </div>
+    <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
+      <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                  <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+              </div>
+              <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                  <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+              </div>
+          </div>
+      </div>
+      <div class="uk-card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+      <div class="uk-card-footer">
+          <a href="#" class="uk-button uk-button-text">Read more</a>
+      </div>
+    </div>
+  
+  </div>    
 
     <div class="footer" id="footer">
         <div class="row">
