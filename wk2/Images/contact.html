@@ -6,50 +6,63 @@
     <title>Melanie Ponce</title>
      <!--CSS Frameworks + FontSyle-->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
-     <link rel="stylesheet" href="Style.css"/>
-     <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Melanie Ponce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="../../Index.html">About <span class="sr-only">(current)</span></a>
+   <!--navbar-->
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="../../Index.html">
+                    <span class="uk-icon uk-margin-small-right" ></span>
+                    Bio
+                </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="container">
-        <div class="row">
-            <div class="col-7" id="col-7">  
-                <form>
-                    <div class="form-group">
-                    <label for="exampleFormControlInput1"><h4>Email address</h4></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                    </div>
-                    <div class="form-group">
-                    <label for="exampleFormControlSelect1"><h4>Name</h4></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="First, Last">
-                    </select>
-                    </div>
-                    <div class="form-group">
-                    <label for="exampleFormControlTextarea1"><h4>Message</h4></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                    </div>
-                </form>
-            </div>
-        </div>
+        </ul>
+        <ul class="uk-navbar-nav">
+        <li>
+            <a href="portfolio.html">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                Portfolio
+            </a>
+        </li>
+    </ul>
+    <ul class="uk-navbar-nav">
+        <li>
+            <a href="contact.html">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                Contact
+            </a>
+        </li>
+    </ul>
     </div>
+</nav>  
+<!--form-->
+<form class="uk-card uk-card-body ">
+  <fieldset class="uk-fieldset">
+
+      <legend class="uk-legend">Contact Me!</legend>
+
+      <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="Last, First Name">
+      </div>
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" placeholder="Email">
+      </div>
+
+      <div class="uk-margin">
+          <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+      </div>
+
+  </fieldset>
+  <p uk-margin>
+    <button class="uk-button uk-button-primary">Submit</button>
+  </p>
+</form>
 
       <div class="footer" id="footer">
         <div class="row">
