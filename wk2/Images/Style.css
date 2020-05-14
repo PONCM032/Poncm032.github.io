@@ -1,6 +1,8 @@
 .profile {
     padding: 25px;
     margin-block: center;
+    width: 90%;
+    height: 90%;
 }
 h1 {
     font-family: 'Gotu', sans-serif;
