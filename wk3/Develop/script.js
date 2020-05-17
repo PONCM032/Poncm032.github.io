@@ -9,11 +9,12 @@ var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q"
 var numeric = ["0","1","2","3","4","5","6","7","8","9"];
 var passarray = [];
 
+document.getElementById("generate").addEventListener("click", writePassword);
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
   var charLength = prompt("Please confirm character lenght between 8 and 128 characters.");
@@ -27,73 +28,67 @@ function writePassword() {
     var charLower = confirm("Would you like to have lowercase characters in your password?");
       //2a at least one has to be true
     if (charSpecial) {
-    passarray.push(symbols);
+    symbols.push(passarray);
     }
     
 
     if (charNumeric) {
-      passarray.push(numeric);
+      numeric.push(passarray);
     }
     
     if ( charUpper) {
-    passarray.push(upper);
+    upper.push(passarray);
     }
 
     if ( charLower) {
-      passarray.push(lower);
+      lower.push(passarray);
     }
-    
+  
+var newpass = passarray.String[Math.floor(Math.random()  * passarray.charLength) + 1];
 
-  return'';
+
+console.log(newpass);
+
+
+return newpass;
 
 }
-generateBtn.addEventListener("click", writePassword);
+
+
 
  
  function generatePassword(passarray) {
     var lenght = 8;
     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    for (var i = 0, n = charset.length; i < length; ++i) {
+    for (var i = 0; i < charset.length; ++i) {
       retVal += charset.charAt(Math.floor(Math.random() * n));
-  }
+  
+  } };
 
- var newpass = passarray.String[Math.floor(Math.random()  * passarray.charLength) + 1];
+// function generate(){
 
-
-console.log(newpass);
-
-return passarray[Math.floor(Math.random()* passarray.charLength) + 1];
-
-  }
+//  var length = document.getElementById("myRange").value;
+//  var values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
+//  var password = "";
 
 
-
-
-
-//function generate(){
-
- // var length = document.getElementById("myRange").value;
- // var values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
- // var password = "";
-
-
- // for(var i = 0; i <= length; i++){
+//  for(var i = 0; i <= length; i++){
 //      password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
-////  }
+//  }
 
 
-    //document.getElementById("viewerPoint").value = password;
+//     document.getElementById("viewerPoint").value = password;
 
 //  }
- // document.getElementById("range").innerHTML = "Length: 8";
+//  document.getElementById("range").innerHTML = "Length: 8";
 
-  //document.getElementById("myRange").oninput = function(){
-   // if(document.getElementById("myRange").value > 0){
-       // document.getElementById("range").innerHTML = "Length: " + document.getElementById("myRange").value;
-   // }
-  //  else{
-        //document.getElementById("range").innerHTML = "Length: 1";
-  //  }
-//  }
+//   document.getElementById("myRange").oninput = function(){
+//    if(document.getElementById("myRange").value > 0){
+//        document.getElementById("range").innerHTML = "Length: " + document.getElementById("myRange").value;
+//    }
+//    else{
+//         document.getElementById("range").innerHTML = "Length: 1";
+//    }
+//  };
 
 
