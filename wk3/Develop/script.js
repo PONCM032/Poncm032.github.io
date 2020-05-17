@@ -13,7 +13,7 @@ document.getElementById("generate").addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
@@ -57,13 +57,13 @@ return newpass;
 
 
  
- function generatePassword(passarray) {
-    var lenght = 8;
-    var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    for (var i = 0; i < charset.length; ++i) {
-      retVal += charset.charAt(Math.floor(Math.random() * n));
+//  function generatePassword(passarray) {
+//     var lenght = 8;
+//     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+//     for (var i = 0; i < charset.length; ++i) {
+//       retVal += charset.charAt(Math.floor(Math.random() * n));
   
-  } };
+//   } };
 
 // function generate(){
 
