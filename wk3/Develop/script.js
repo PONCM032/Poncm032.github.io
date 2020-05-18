@@ -14,6 +14,7 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   // var password = generatePassword();
+  //Parent Element
   var passwordText = document.getElementById("#password")
   //passwordText.value = password; 
 
@@ -47,8 +48,15 @@ function writePassword() {
      
  var arrayJSON = JSON.stringify(passarray);
 
- var randomarray = arrayJSON[Math.floor(Math.random() * arrayJSON.charLength)];
- 
+for(var i=0 ; i < arrayJSON.length; i++){
+ var randomarray = arrayJSON[Math.floor(Math.random() * charLength + 9)];
+}
+
+for (let password of randomarray){
+let pusharray = document.createElement("textarea");
+ pusharray.textcontent = password;
+ password.appendChild(pusharray);
+}
 console.log(randomarray);
 //  passwordText += arrayJSON;
 // return arrayloop;
