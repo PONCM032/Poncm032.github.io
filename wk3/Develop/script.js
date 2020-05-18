@@ -9,13 +9,13 @@ var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q"
 var numeric = ["0","1","2","3","4","5","6","7","8","9"];
 var passarray = [];
 
-document.getElementById("generate").addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
   // var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  var passwordText = document.getElementById("#password")
+  //passwordText.value = password; 
 
   var charLength = prompt("Please confirm character lenght between 8 and 128 characters.");
     while (charLength < 8 || charLength > 128) {
@@ -28,29 +28,30 @@ function writePassword() {
     var charLower = confirm("Would you like to have lowercase characters in your password?");
       //2a at least one has to be true
     if (charSpecial) {
-    symbols.push(passarray);
+    passarray.push(symbols);
     }
     
-
     if (charNumeric) {
-      numeric.push(passarray);
+    passarray.push(numeric);
     }
     
     if ( charUpper) {
-    upper.push(passarray);
+    passarray.push(upper);
     }
 
     if ( charLower) {
-      lower.push(passarray);
+    passarray.push(lower);
     }
-  
-var newpass = passarray.String[Math.floor(Math.random()  * passarray.charLength) + 1];
 
+      //var newpass = String[Math.floor(Math.random()  * passarray.charlength) + 1];
+     
+ var arrayJSON = JSON.stringify(passarray);
 
-console.log(newpass);
-
-
-return newpass;
+ var randomarray = arrayJSON[Math.floor(Math.random() * arrayJSON.charLength)];
+ 
+console.log(randomarray);
+//  passwordText += arrayJSON;
+// return arrayloop;
 
 }
 
