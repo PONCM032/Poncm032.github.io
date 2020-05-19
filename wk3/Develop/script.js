@@ -48,15 +48,15 @@ function writePassword() {
      
  var arrayJSON = JSON.stringify(passarray);
 
-for(var i=0 ; i < arrayJSON.length; i++){
- var randomarray = arrayJSON[Math.floor(Math.random() * charLength + 9)];
+for(var i=0 ; i <= arrayJSON.charLength; i++){
+ var randomarray = arrayJSON[Math.floor(Math.random() * arrayJSON.length) + 1];
 }
 
-for (let password of randomarray){
-let pusharray = document.createElement("textarea");
- pusharray.textcontent = password;
- password.appendChild(pusharray);
-}
+// for (let password of randomarray){
+// let pusharray = document.createElement("textarea");
+//  pusharray.textcontent = password;
+//  password.appendChild(pusharray);
+// }
 console.log(randomarray);
 //  passwordText += arrayJSON;
 // return arrayloop;
