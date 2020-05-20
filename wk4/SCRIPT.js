@@ -70,18 +70,18 @@ divStartButton.addEventListener("click", function () {
 });
 
 //Timer
-UIkit.util.ready(function () {
+UIkit.util.ready(function quizTimer() {
 
     var bar = document.getElementById('js-progressbar');
 
     var animate = setInterval(function () {
 
-        bar.value += 10;
+        bar.value += 1;
 
         if (bar.value >= bar.max) {
             clearInterval(animate);
         }
-
+        console.log(bar.value);
     }, 1000);
 
 });
@@ -134,15 +134,15 @@ function showQuestion(questions) {
     questionsEl.innerText = questions.questions;
 }
 
-function quizTimer() {
-    var timerTime = setInterval(function () {
-        secondsLeft--;
-        time.textContent = secondsLeft + "seconds";
-        if (secondsLeft === 0) {
-            clearInterval(timerTime);
-        }
-    }, 1000);
-}
+// function quizTimer() {
+//     var timerTime = setInterval(function () {
+//         secondsLeft--;
+//         time.textContent = secondsLeft + "seconds";
+//         if (secondsLeft === 0) {
+//             clearInterval(timerTime);
+//         }
+//     }, 1000);
+// }
 divStartButton
 //html sould have a start quiz buttom
 //for every answer, there's buttons, so you will need an onclick for the buttons - give each button it's own class

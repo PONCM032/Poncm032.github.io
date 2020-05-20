@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Quiz Time!</title>
     <!--Ulkit-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css" />
 </head>
+
 <body>
     <!--Start Div-->
     <div class="uk-child-width-5-6@m uk-grid-small uk-grid-match" uk-grid id="start">
-        <div  class="uk-card uk-card-default uk-card-body">
-        <h1 class="uk-card-title">Test Your skills!</h1>
-        <p>Press the start button to begin. You will have a timer of 60 seconds to finish the quiz. Any wrong answer will deduct 5 seconds from your final score. Have fun!</p>
-        <br>
-        <button class="uk-button uk-button-secondary" id="startbtn">Start</button>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h1 class="uk-card-title">Test Your skills!</h1>
+            <p>Press the start button to begin. You will have a timer of 60 seconds to finish the quiz. Any wrong answer
+                will deduct 5 seconds from your final score. Have fun!</p>
+            <br>
+            <button class="uk-button uk-button-secondary" id="startbtn">Start</button>
         </div>
     </div>
     <!--Hidden Div - Questions-->
-    <div class="uk-child-width-5-6@m uk-grid-small uk-grid-match" uk-grid id="questions" style="display:none"> 
-        <div  class="uk-card uk-card-default uk-card-body">
-            <progress id="js-progressbar" class="uk-progress" value="60" max="100"></progress>
-        <p class="uk-card-title" id="showQuestion">Questions</p>
-        <div id="showOptions">
-            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="A">button1</button>
-            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="B">button2</button>
-            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="c">button3</button>
-            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="D">button4</button>
-            <div id="showAnswer"> </div>
-        </div>
-        <br>
-        <div id="next">
-            <button class="uk-button uk-button-secondary"  id="nextBtn">Next</button>
-        </div>
+    <div class="uk-child-width-5-6@m uk-grid-small uk-grid-match" uk-grid id="questions" style="display:none">
+        <div class="uk-card uk-card-default uk-card-body">
+            <progress id="js-progressbar" class="uk-progress" value="0" max="60"></progress>
+            <p class="uk-card-title" id="showQuestion">Questions</p>
+            <div id="showOptions">
+                <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="A">button1</button>
+                <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="B">button2</button>
+                <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="c">button3</button>
+                <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="D">button4</button>
+                <div id="showAnswer"> </div>
+            </div>
+            <br>
+            <div id="next">
+                <button class="uk-button uk-button-secondary" id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
     <div id="results" style="display:none">
@@ -40,4 +43,5 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit.min.js"></script>
 <script src="SCRIPT.js"></script>
+
 </html>
