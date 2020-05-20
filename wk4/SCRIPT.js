@@ -1,40 +1,48 @@
 var questionsArray = [
-{
-    questions: "What did Luke say to his sister's bully?",
-    optionA: "Stop",
-    optionB: "I'm calling the police",
-    optionC: "Yeet",
-    optionC: "Don't you Leia hand on her",
-    correct: "Don't you Leia hand on her",
-},
-{
-    questions: "What cannot travel in space?",
-    optionA: "Light",
-    optionB: "Ultraviolet Rays",
-    optionC: "Sound",
-    optionD: "Self-esteem",
-    correct: "Sound",
-}, 
-{
-    questions: "Who created the Walt Disney Company?",
-    optionA: "Walt Disney",
-    optionB: "Bob Chapek",
-    optionC: "Bob Iger",
-    optionD: "My neighbor Bob",
-    correct: "Walt Disney",
-},
-{
-    questions: "What a Sith Lord's favorite place to shop?",
-    optionA: "Mall of Millenia",
-    optionB: "Publix",
-    option3: "The Darth Maul",
-    optionD: "Target",
-    correct: "The Darth Maul",
-}];
+    {
+        questions: "What did Luke say to his sister's bully?",
+        optionA: "Stop",
+        optionB: "I'm calling the police",
+        optionC: "Yeet",
+        optionC: "Don't you Leia hand on her",
+        correct: "Don't you Leia hand on her",
+    },
+    {
+        questions: "What cannot travel in space?",
+        optionA: "Light",
+        optionB: "Ultraviolet Rays",
+        optionC: "Sound",
+        optionD: "Self-esteem",
+        correct: "Sound",
+    },
+    {
+        questions: "Who created the Walt Disney Company?",
+        optionA: "Walt Disney",
+        optionB: "Bob Chapek",
+        optionC: "Bob Iger",
+        optionD: "My neighbor Bob",
+        correct: "Walt Disney",
+    },
+    {
+        questions: "What a Sith Lord's favorite place to shop?",
+        optionA: "Mall of Millenia",
+        optionB: "Publix",
+        optionC: "The Darth Mall",
+        optionD: "Target",
+        correct: "The Darth Mall",
+    },
+    {
+        questions: "What is a bounty hunters favorite companion?",
+        optionA: "His Boba Pet!",
+        optionB: "Crippling depression",
+        optionC: "Paternal issues",
+        optionD: "The overwhelming concept of having over hundreds of clone siblings",
+        correct: "His Boba Pet!",
+    }];
 
 //variables
 var questionNum = 0;
-var lastQuestion = questions.lenght -1;
+var lastQuestion = questions.lenght - 1;
 var secondsLeft = "60";
 
 var divanswers = document.querySelector("#showOptions");
@@ -44,28 +52,45 @@ const questionsEl = document.getElementById("questions");
 const optionsEl = document.getElementById("showOptions");
 const nextEl = document.getElementById("nextBtn");
 //options el vars
-var A = document.querySelector("A");
-var B = document.querySelector("B");
-var C = document.querySelector("C");
-var D = document.querySelector("D");
+var A = document.getElementById("A");
+var B = document.getElementById("B");
+var C = document.getElementById("C");
+var D = document.getElementById("D");
 
 divStart = document.querySelector("#start");
 divStartButton = document.querySelector("#startbtn");
 
 //click event, start button block display questions
-divStartButton.addEventListener("click", function() {
+divStartButton.addEventListener("click", function () {
     var instructions = document.getElementById("startbtn");
     divStart.style.display = "none";
     document.getElementById("questions").style.display = "block";
-    quizTimer();
+    quizTimer(); 
     nextQuestion();
-})
+});
 
-function nextQuestion(){
+//Timer
+UIkit.util.ready(function () {
+
+    var bar = document.getElementById('js-progressbar');
+
+    var animate = setInterval(function () {
+
+        bar.value += 10;
+
+        if (bar.value >= bar.max) {
+            clearInterval(animate);
+        }
+
+    }, 1000);
+
+});
+
+function nextQuestion() {
 
     let q = questionsArray[questionNum];
 
-    question.innerHTML = "<p>"+ q.question +"</p>";
+    question.innerHTML = "<p>" + q.question + "</p>";
 
     optionA.innerHTML = q.optionA;
 
@@ -94,26 +119,26 @@ divanswers.addEventListener("click", function (event) {
     console.log(event.target.textContent);
     var clickedAnswer = event.target.textContent;
     if (clickedAnswer === questions[questionNum].correct) {
-        alert ("Correct")
+        alert("Correct")
     } else {
-        alert ("wrong")
-        ;
+        alert("wrong")
+            ;
     }
 
 })
 
-function SetQuestion (){
- showQuestion(questions)
+function SetQuestion() {
+    showQuestion(questions)
 }
 function showQuestion(questions) {
-    questionsEl.innerText= questions.questions;
+    questionsEl.innerText = questions.questions;
 }
 
 function quizTimer() {
-    var timerTime = setInterval(function() {
+    var timerTime = setInterval(function () {
         secondsLeft--;
-        time.textContent=secondsLeft + "seconds";
-       if(secondsLeft === 0) {
+        time.textContent = secondsLeft + "seconds";
+        if (secondsLeft === 0) {
             clearInterval(timerTime);
         }
     }, 1000);
