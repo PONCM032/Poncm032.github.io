@@ -30,7 +30,6 @@ function writePassword() {
   var charUpper = confirm("Would you like to have uppercase characters in your password?");
   var charLower = confirm("Would you like to have lowercase characters in your password?");
   //2a at least one has to be true
-  //.concat
   if (charSpecial) {
     passarray = passarray.concat(symbols);
   }
@@ -43,60 +42,14 @@ function writePassword() {
   if (charLower) {
     passarray = passarray.concat(lower);
   }
-
-  //var newpass = String[Math.floor(Math.random()  * passarray.charlength) + 1];  
-  //  var arrayJSON = JSON.stringify(passarray);
+  if(charSpecial === false && charNumeric === false && charUpper === false && charLower === false){
+    alert("Please click Generate Password button again and pick at least one condition to be true");
+  }
 
   for (var i = 0; i < charLength; i++) {
     var randomChar = passarray[Math.floor(Math.random() * passarray.length)];
     password = password + randomChar;
   }
-  //console.log(passwordText);
   passwordText.textContent = password;
-
-
-  // for (let password of randomarray){
-  // let pusharray = document.getElement("textarea");
-  //  pusharray.textcontent = password;
-  //  password.appendChild(pusharray);
-  // }
-
-  console.log(passarray);
 }
-
-
-//  function generatePassword(passarray) {
-//     var lenght = 8;
-//     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-//     for (var i = 0; i < charset.length; ++i) {
-//       retVal += charset.charAt(Math.floor(Math.random() * n));
-
-//   } };
-
-// function generate(){
-
-//  var length = document.getElementById("myRange").value;
-//  var values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
-//  var password = "";
-
-
-//  for(var i = 0; i <= length; i++){
-//      password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
-//  }
-
-
-//     document.getElementById("viewerPoint").value = password;
-
-//  }
-//  document.getElementById("range").innerHTML = "Length: 8";
-
-//   document.getElementById("myRange").oninput = function(){
-//    if(document.getElementById("myRange").value > 0){
-//        document.getElementById("range").innerHTML = "Length: " + document.getElementById("myRange").value;
-//    }
-//    else{
-//         document.getElementById("range").innerHTML = "Length: 1";
-//    }
-//  };
-
 
