@@ -4,7 +4,7 @@ var questionsArray = [
         optionA: "Stop",
         optionB: "I'm calling the police",
         optionC: "Yeet",
-        optionC: "Don't you Leia hand on her",
+        optionD: "Don't you Leia hand on her",
         correct: "Don't you Leia hand on her",
     },
     {
@@ -52,6 +52,7 @@ const questionsEl = document.getElementById("questions");
 const optionsEl = document.getElementById("showOptions");
 const nextEl = document.getElementById("nextBtn");
 //options el vars
+var question = document.getElementById("showQuestion");
 var A = document.getElementById("A");
 var B = document.getElementById("B");
 var C = document.getElementById("C");
@@ -67,7 +68,7 @@ divStartButton.addEventListener("click", function () {
     //Timer
     UIkit.util.ready(function quizTimer() {
 
-        var bar = document.getElementById('js-progressbar');
+        var bar = document.getElementById("timer");
 
         var animate = setInterval(function () {
 
@@ -87,17 +88,13 @@ divStartButton.addEventListener("click", function () {
 
 function nextQuestion() {
 
-    let q = questionsArray[questionNum];
-
-    question.innerHTML = "<p>" + q.question + "</p>";
-
-    optionA.innerHTML = q.optionA;
-
-    optionB.innerHTML = q.optionB;
-
-    optionC.innerHTML = q.optionC;
-
-    optionC.innerHTML = q.optionC;
+    for(var i=0; i<questionsArray.length; i++){
+        question.textContent = questionsArray[i].questions;
+        A.textContent = questionsArray[i].optionA;
+        B.textContent = questionsArray[i].optionB;
+        C.textContent = questionsArray[i].optionC;
+        D.textContent = questionsArray[i].optionD;
+    }
 
 }
 // remove?
