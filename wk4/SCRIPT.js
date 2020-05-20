@@ -62,29 +62,28 @@ divStartButton = document.querySelector("#startbtn");
 
 //click event, start button block display questions
 divStartButton.addEventListener("click", function () {
-    var instructions = document.getElementById("startbtn");
     divStart.style.display = "none";
     document.getElementById("questions").style.display = "block";
-    quizTimer(); 
+    //Timer
+    UIkit.util.ready(function quizTimer() {
+
+        var bar = document.getElementById('js-progressbar');
+
+        var animate = setInterval(function () {
+
+            bar.value += 1;
+
+            if (bar.value >= bar.max) {
+                clearInterval(animate);
+            }
+            console.log(bar.value);
+        }, 1000);
+
+    });
     nextQuestion();
 });
 
-//Timer
-UIkit.util.ready(function quizTimer() {
 
-    var bar = document.getElementById('js-progressbar');
-
-    var animate = setInterval(function () {
-
-        bar.value += 1;
-
-        if (bar.value >= bar.max) {
-            clearInterval(animate);
-        }
-        console.log(bar.value);
-    }, 1000);
-
-});
 
 function nextQuestion() {
 
@@ -115,17 +114,17 @@ function nextQuestion() {
 //         //hide answer divs and show results = final div
 // }}
 
-divanswers.addEventListener("click", function (event) {
-    console.log(event.target.textContent);
-    var clickedAnswer = event.target.textContent;
-    if (clickedAnswer === questions[questionNum].correct) {
-        alert("Correct")
-    } else {
-        alert("wrong")
-            ;
-    }
+// divanswers.addEventListener("click", function (event) {
+//     console.log(event.target.textContent);
+//     var clickedAnswer = event.target.textContent;
+//     if (clickedAnswer === questions[questionNum].correct) {
+//         alert("Correct")
+//     } else {
+//         alert("wrong")
+//             ;
+//     }
 
-})
+// })
 
 function SetQuestion() {
     showQuestion(questions)
