@@ -5,7 +5,7 @@ var questionsArray = [
         optionB: "I'm calling the police",
         optionC: "Yeet",
         optionD: "Don't you Leia hand on her",
-        correct: "Don't you Leia hand on her",
+        correct: "D",
     },
     {
         questions: "What cannot travel in space?",
@@ -13,7 +13,7 @@ var questionsArray = [
         optionB: "Ultraviolet Rays",
         optionC: "Sound",
         optionD: "Self-esteem",
-        correct: "Sound",
+        correct: "C",
     },
     {
         questions: "Who created the Walt Disney Company?",
@@ -21,7 +21,7 @@ var questionsArray = [
         optionB: "Bob Chapek",
         optionC: "Bob Iger",
         optionD: "My neighbor Bob",
-        correct: "Walt Disney",
+        correct: "A",
     },
     {
         questions: "What a Sith Lord's favorite place to shop?",
@@ -29,7 +29,7 @@ var questionsArray = [
         optionB: "Publix",
         optionC: "The Darth Mall",
         optionD: "Target",
-        correct: "The Darth Mall",
+        correct: "C",
     },
     {
         questions: "What is a bounty hunters favorite companion?",
@@ -37,12 +37,12 @@ var questionsArray = [
         optionB: "Crippling depression",
         optionC: "Paternal issues",
         optionD: "The overwhelming concept of having over hundreds of clone siblings",
-        correct: "His Boba Pet!",
+        correct: "A",
     }];
 
 //variables
 var questionNum = 0;
-var lastQuestion = questions.lenght - 1;
+var lastQuestion = questionsArray.lenght - 1;
 var secondsLeft = "60";
 
 var divanswers = document.querySelector("#showOptions");
@@ -50,7 +50,7 @@ var options = document.querySelector("#showAnwers");
 //div elements vars
 const questionsEl = document.getElementById("questions");
 const optionsEl = document.getElementById("showOptions");
-const nextEl = document.getElementById("nextBtn");
+const scoreEl = document.getElementById("score");
 //options el vars
 var question = document.getElementById("showQuestion");
 var A = document.getElementById("A");
@@ -81,22 +81,41 @@ divStartButton.addEventListener("click", function () {
         }, 1000);
 
     });
-    nextQuestion();
+
+    appendQuestion();
+
 });
 
+function appendQuestion() {
 
+    let q = questionsArray[questionNum];
 
-function nextQuestion() {
-
-    for(var i=0; i<questionsArray.length; i++){
-        question.textContent = questionsArray[i].questions;
-        A.textContent = questionsArray[i].optionA;
-        B.textContent = questionsArray[i].optionB;
-        C.textContent = questionsArray[i].optionC;
-        D.textContent = questionsArray[i].optionD;
-    }
-
+    question.textContent = q.questions;
+    A.textContent = q.optionA;
+    B.textContent = q.optionB;
+    C.textContent = q.optionC;
+    D.textContent = q.optionD;
+    //increase questionNum by 1 to loop through questions and options
+    for (var i = 0; i < 4; i++) {
+        i++
+    };
 }
+
+//score
+
+function keepScore(){
+    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+        scoreEl.innerHTML += 
+
+    }
+}
+
+//Check answer, add score
+function checkAnswer(answer) {
+    if(question[questionNum]).correct
+}
+
+
 // remove?
 // function nextQuestion () {
 //     if(questionNum < question.lenght) {
@@ -123,12 +142,12 @@ function nextQuestion() {
 
 // })
 
-function SetQuestion() {
-    showQuestion(questions)
-}
-function showQuestion(questions) {
-    questionsEl.innerText = questions.questions;
-}
+// function SetQuestion() {
+//     showQuestion(questions)
+// }
+// function showQuestion(questions) {
+//     questionsEl.innerText = questions.questions;
+// }
 
 // function quizTimer() {
 //     var timerTime = setInterval(function () {
@@ -139,6 +158,6 @@ function showQuestion(questions) {
 //         }
 //     }, 1000);
 // }
-divStartButton
+// divStartButton
 //html sould have a start quiz buttom
 //for every answer, there's buttons, so you will need an onclick for the buttons - give each button it's own class
