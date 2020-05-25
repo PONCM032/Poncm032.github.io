@@ -36,9 +36,18 @@ var questionsArray = [
         optionA: "His Boba Pet!",
         optionB: "Crippling depression",
         optionC: "Paternal issues",
-        optionD: "The overwhelming concept of having over hundreds of clone siblings",
+        optionD: "The overwhelming morality of right or wrong",
         correct: "A",
-    }];
+    },
+    {
+        questions: "Which program does a Jedi use to open their PDF files?",
+        optionA: "Google Docs",
+        optionB: "A rock",
+        optionC: "Even with immeasurable technology, Jedis are fans of pen and paper",
+        optionD: "Adobe Wan Kenobi",
+        correct: "D",
+    },
+];
 
 //variables
 var questionNum = 0;
@@ -73,8 +82,7 @@ function appendQuestion() {
     C.textContent = q.optionC;
     D.textContent = q.optionD;
     //increase questionNum by 1 to loop through questions and options
-    
-   checkOnclick.addEventListener("click", checkAnswer);
+    checkOnclick.addEventListener("click", checkAnswer);
 }
 
 //click event, start button block display questions
@@ -95,7 +103,7 @@ divStartButton.addEventListener("click", function () {
             }
             console.log(bar.value);
         }, 1000);
-
+  
     });
     //Functions to start at onclick event
     appendQuestion();
@@ -104,81 +112,51 @@ divStartButton.addEventListener("click", function () {
 
 });
 
-
-
-//score
-
-// function keepScore(){
-//     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-//         scoreEl.innerHTML += 
-// correctAnswer()
-// wrongAnswer()
-//     }
-// }
-
-//Check answer, add score
 function checkAnswer(answer) {
 
-    if(questionsArray[questionNum].correct == answer){ //
-        score ++;
+    if (answer === questionsArray[questionNum].correct) { //
         correctAnswer();
         questionNum++;
         appendQuestion();
-        //change button bckg to green
-    }else{
+        score ++;
+    } else {
         wrongAnswer();
         questionNum++;
         appendQuestion();
-        //change button bckg to red
     }
-    
+
     count = 0;
 
-    if(questionNum > lastQuestion){
-       showScore();
+    if (questionNum === lastQuestion) {
+        showScore();
     }
 }
 
 //#score div color answer
-function correctAnswer(){
-      document.getElementById("score").style.backgroundColor = "#0f0";
-  }
+function correctAnswer() {
+    document.getElementById("score").style.backgroundColor = "#0f0";
+}
 
-function wrongAnswer(){
+function wrongAnswer() {
     document.getElementById("score").style.backgroundColor = "#f00";
 }
 
+//Check answer, add score
+//score
+// function keepScore(){
+//     score;
+// };
+
+
 //last div
 function showScore() {
-    document.getElementById("results").style.display = "block";
-   
+
+    document.getElementById("showResults").style.display = "block";
+
     var scorePercentage = Math.round(100 * score / questionsArray.length);
-    
+
     var show = document.getElementById("showResults");
 
     show.textContent = scorePercentage;
 
-    };
-
-// divanswers.addEventListener("click", function (event) {
-//     console.log(event.target.textContent);
-//     var clickedAnswer = event.target.textContent;
-//     if (clickedAnswer === questions[questionNum].correct) {
-//         alert("Correct")
-//     } else {
-//         alert("wrong")
-//             ;
-//     }
-
-// })
-
-// function SetQuestion() {
-//     showQuestion(questions)
-// }
-// function showQuestion(questions) {
-//     questionsEl.innerText = questions.questions;
-// }
-
-// divStartButton
-//html sould have a start quiz buttom
-//for every answer, there's buttons, so you will need an onclick for the buttons - give each button it's own class
+};
