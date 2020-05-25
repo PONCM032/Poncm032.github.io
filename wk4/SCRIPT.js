@@ -118,22 +118,28 @@ divStartButton.addEventListener("click", function () {
 
 //Check answer, add score
 function checkAnswer(answer) {
+
     if(questionsArray[questionNum].correct == answer){ //
         score ++;
         correctAnswer();
+        questionNum++;
+        appendQuestion();
         //change button bckg to green
     }else{
         wrongAnswer();
+        questionNum++;
+        appendQuestion();
         //change button bckg to red
     }
     
     count = 0;
 
-    if(questionNum < lastQuestion){
-        questionNum++;
-        appendQuestion();
+    if(questionNum > lastQuestion){
+       showScore();
     }
 }
+
+//#score div color answer
 function correctAnswer(){
       document.getElementById("score").style.backgroundColor = "#0f0";
   }
@@ -141,6 +147,7 @@ function correctAnswer(){
 function wrongAnswer(){
     document.getElementById("score").style.backgroundColor = "#f00";
 }
+
 //last div
 function showScore() {
     document.getElementById("results").style.display = "block";
