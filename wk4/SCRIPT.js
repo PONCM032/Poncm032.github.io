@@ -114,23 +114,26 @@ divStartButton.addEventListener("click", function () {
 
 function checkAnswer(answer) {
 
+    
+
     if (answer === questionsArray[questionNum].correct) { //
         correctAnswer();
-        questionNum++;
-        appendQuestion();
-        score ++;
+        // questionNum++;
+        // appendQuestion();
+        score++;
     } else {
         wrongAnswer();
         questionNum++;
         appendQuestion();
     }
-
-    count = 0;
-
-    if (questionNum === lastQuestion) {
+    
+   if (questionNum < lastQuestion){
+        questionNum++;
+        appendQuestion();
+    }else{
         showScore();
     }
-}
+};
 
 //#score div color answer
 function correctAnswer() {
@@ -150,8 +153,9 @@ function wrongAnswer() {
 
 //last div
 function showScore() {
-
-    document.getElementById("showResults").style.display = "block";
+    divStart.style.display = "none";
+    document.getElementById("questions").style.display = "none";
+    document.getElementById("results").style.display = "block";
 
     var scorePercentage = Math.round(100 * score / questionsArray.length);
 
