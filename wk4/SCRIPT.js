@@ -48,6 +48,7 @@ var score = 0;
 
 var divanswers = document.querySelector("#showOptions");
 var options = document.querySelector("#showAnwers");
+var checkOnclick = document.getElementsByClassName("uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom uk-text-capitalize")
 //div elements vars
 const questionsEl = document.getElementById("questions");
 const optionsEl = document.getElementById("showOptions");
@@ -61,6 +62,20 @@ var D = document.getElementById("D");
 
 divStart = document.querySelector("#start");
 divStartButton = document.querySelector("#startbtn");
+
+function appendQuestion() {
+
+    let q = questionsArray[questionNum];
+
+    question.textContent = q.questions;
+    A.textContent = q.optionA;
+    B.textContent = q.optionB;
+    C.textContent = q.optionC;
+    D.textContent = q.optionD;
+    //increase questionNum by 1 to loop through questions and options
+    
+   checkOnclick.addEventListener("click", checkAnswer);
+}
 
 //click event, start button block display questions
 divStartButton.addEventListener("click", function () {
@@ -89,18 +104,7 @@ divStartButton.addEventListener("click", function () {
 
 });
 
-function appendQuestion() {
 
-    let q = questionsArray[questionNum];
-
-    question.textContent = q.questions;
-    A.textContent = q.optionA;
-    B.textContent = q.optionB;
-    C.textContent = q.optionC;
-    D.textContent = q.optionD;
-    //increase questionNum by 1 to loop through questions and options
-   
-}
 
 //score
 
@@ -119,8 +123,15 @@ function checkAnswer(answer) {
         correctAnswer();
         //change button bckg to green
     }else{
-        wrongAnswer;
+        wrongAnswer();
         //change button bckg to red
+    }
+    
+    count = 0;
+
+    if(questionNum < lastQuestion){
+        questionNum++;
+        appendQuestion();
     }
 }
 function correctAnswer(){
