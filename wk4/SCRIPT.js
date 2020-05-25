@@ -44,6 +44,7 @@ var questionsArray = [
 var questionNum = 0;
 var lastQuestion = questionsArray.lenght - 1;
 var secondsLeft = "60";
+var score = 0;
 
 var divanswers = document.querySelector("#showOptions");
 var options = document.querySelector("#showAnwers");
@@ -81,8 +82,10 @@ divStartButton.addEventListener("click", function () {
         }, 1000);
 
     });
-
+    //Functions to start at onclick event
     appendQuestion();
+    keepScore();
+    checkAnswer(); //  
 
 });
 
@@ -96,39 +99,48 @@ function appendQuestion() {
     C.textContent = q.optionC;
     D.textContent = q.optionD;
     //increase questionNum by 1 to loop through questions and options
-    for (var i = 0; i < 4; i++) {
-        i++
-    };
+   
 }
 
 //score
 
-function keepScore(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        scoreEl.innerHTML += 
-
-    }
-}
+// function keepScore(){
+//     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+//         scoreEl.innerHTML += 
+// correctAnswer()
+// wrongAnswer()
+//     }
+// }
 
 //Check answer, add score
 function checkAnswer(answer) {
-    if(question[questionNum]).correct
+    if(questionsArray[questionNum].correct == answer){ //
+        score ++;
+        correctAnswer();
+        //change button bckg to green
+    }else{
+        wrongAnswer;
+        //change button bckg to red
+    }
 }
+function correctAnswer(){
+      document.getElementById("score").style.backgroundColor = "#0f0";
+  }
 
+function wrongAnswer(){
+    document.getElementById("score").style.backgroundColor = "#f00";
+}
+//last div
+function showScore() {
+    document.getElementById("results").style.display = "block";
+   
+    var scorePercentage = Math.round(100 * score / questionsArray.length);
+    
+    var show = document.getElementById("showResults");
 
-// remove?
-// function nextQuestion () {
-//     if(questionNum < question.lenght) {
-//     var newQuestion =  document.querySelector ("#question-text");
-//     newQuestion.textContent = questions[questionNum].question;
-//     console.log(Answer1);
-//    answer1.textContent = questions[questionsNum].answer1;
-//    answer2.textContent = questions[questionsNum].answer2;
-//    answer3.textContent = questions[questionsNum].answer3;
-//    answer4.textContent = questions[questionsNum].answer4;
-// } else {
-//         //hide answer divs and show results = final div
-// }}
+    show.textContent = scorePercentage;
+
+    };
 
 // divanswers.addEventListener("click", function (event) {
 //     console.log(event.target.textContent);
@@ -149,15 +161,6 @@ function checkAnswer(answer) {
 //     questionsEl.innerText = questions.questions;
 // }
 
-// function quizTimer() {
-//     var timerTime = setInterval(function () {
-//         secondsLeft--;
-//         time.textContent = secondsLeft + "seconds";
-//         if (secondsLeft === 0) {
-//             clearInterval(timerTime);
-//         }
-//     }, 1000);
-// }
 // divStartButton
 //html sould have a start quiz buttom
 //for every answer, there's buttons, so you will need an onclick for the buttons - give each button it's own class
