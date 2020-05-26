@@ -124,26 +124,17 @@ function checkAnswer(answer) {
         correctAnswer();
         questionNum++;
         appendQuestion();
-        score++;
-        showScore();
     } else{
         wrongAnswer();
         questionNum++;
         appendQuestion();
     }
-
-    //    if (questionNum < lastQuestion){
-    //     questionNum++;
-    //     appendQuestion();
-    // }else{
-    //     showScore();
-    // }
-
 };
 
 //#score div color answer
 function correctAnswer() {
     document.getElementById("score").style.backgroundColor = "#0f0";
+    score++;
 }
 
 function wrongAnswer() {
