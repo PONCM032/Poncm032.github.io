@@ -51,8 +51,8 @@ var questionsArray = [
 
 //variables
 var questionNum = 0;
-var lastQuestion = questionsArray.lenght - 1;
-var secondsLeft = "60";
+var lastQuestion = 5;
+var time = 0;
 var score = 0;
 
 var divanswers = document.querySelector("#showOptions");
@@ -80,9 +80,11 @@ function appendQuestion() {
     A.textContent = q.optionA;
     B.textContent = q.optionB;
     C.textContent = q.optionC;
-    D.textContent = q.optionD;
+    D.textContent = q.optionD;    
+  
     //increase questionNum by 1 to loop through questions and options
     checkOnclick.addEventListener("click", checkAnswer);
+  
 }
 
 //click event, start button block display questions
@@ -92,18 +94,17 @@ divStartButton.addEventListener("click", function () {
     //Timer
     UIkit.util.ready(function quizTimer() {
 
-        var bar = document.getElementById("timer");
+        time = document.getElementById("timer");
 
         var animate = setInterval(function () {
 
-            bar.value += 1;
+            time.value += 1;
 
-            if (bar.value >= bar.max) {
+            if (time.value >= time.max) {
                 clearInterval(animate);
             }
-            console.log(bar.value);
         }, 1000);
-  
+        console.log(time.value);
     });
     //Functions to start at onclick event
     appendQuestion();
@@ -116,23 +117,28 @@ function checkAnswer(answer) {
 
     
 
-    if (answer === questionsArray[questionNum].correct) { //
+    if(questionNum > lastQuestion){
+        showScore();
+    }
+    else if(answer === questionsArray[questionNum].correct) {
         correctAnswer();
-        // questionNum++;
-        // appendQuestion();
+        questionNum++;
+        appendQuestion();
         score++;
-    } else {
+        showScore();
+    } else{
         wrongAnswer();
         questionNum++;
         appendQuestion();
     }
-    
-   if (questionNum < lastQuestion){
-        questionNum++;
-        appendQuestion();
-    }else{
-        showScore();
-    }
+
+    //    if (questionNum < lastQuestion){
+    //     questionNum++;
+    //     appendQuestion();
+    // }else{
+    //     showScore();
+    // }
+
 };
 
 //#score div color answer
@@ -143,13 +149,6 @@ function correctAnswer() {
 function wrongAnswer() {
     document.getElementById("score").style.backgroundColor = "#f00";
 }
-
-//Check answer, add score
-//score
-// function keepScore(){
-//     score;
-// };
-
 
 //last div
 function showScore() {
