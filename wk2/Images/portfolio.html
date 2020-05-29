@@ -1,74 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melanie Ponce</title>
     <!--CSS Frameworks + FontSyle-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
-    <link rel="stylesheet" href="Style.css"/>
+    <link rel="stylesheet" href="Style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!--navbar-->
-  <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
 
-        <ul class="uk-navbar-nav">
-            <li>
-                <a href="../../Index.html">
-                    <span class="uk-icon uk-margin-small-right" ></span>
-                    Bio
-                </a>
-            </li>
-        </ul>
-        <ul class="uk-navbar-nav">
-        <li>
-            <a href="portfolio.html">
-                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-                Portfolio
-            </a>
-        </li>
-    </ul>
-    <ul class="uk-navbar-nav">
-        <li>
-            <a href="contact.html">
-                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-                Contact
-            </a>
-        </li>
-    </ul>
-    </div>
-</nav>  
+<body>
+    <!--navbar-->
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="../../Index.html">
+                        <span class="uk-icon uk-margin-small-right"></span>
+                        Bio
+                    </a>
+                </li>
+            </ul>
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="portfolio.html">
+                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                        Portfolio
+                    </a>
+                </li>
+            </ul>
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="contact.html">
+                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!--Cards-->
-  <br>
-  <div uk-grid class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@s uk-text-righ uk-margin-medium" id="portfolioDiv">
-    <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
-        <div class="uk-card-media-top">
-            <img src="images/Brew4U Header.png" alt="">
+    <br>
+    <div uk-grid class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@s uk-text-righ uk-margin-medium"
+        id="portfolioDiv">
+        <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
+            <div class="uk-card-media-top">
+                <img src="images/Brew4U Header.png" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">Brew For You</h3>
+                <p>Group project - worked mainly in HTML and CSS styling. Partnered with team to create functionality in
+                    website.</p>
+            </div>
+            <div class="uk-card-footer">
+                <a onclick="window.location.href='https://eunahk92.github.io/brew-for-you/';"
+                    class="uk-button uk-button-text">Visit Site</a>
+            </div>
         </div>
-      <div class="uk-card-body">
-          <h3 class="uk-card-title">Brew For You</h3>
-          <p>Group project - worked mainly in HTML and CSS styling. Partnered with team to create functionality in website.</p>
-      </div>
-      <div class="uk-card-footer">
-        <a onclick="window.location.href='https://eunahk92.github.io/brew-for-you/';" class="uk-button uk-button-text">Visit Site</a>
-      </div>
-    </div>
-    <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
-        <div class="uk-card-media-top">
-            <img src="images/PassGen Logo.png" alt="">
+        <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
+            <div class="uk-card-media-top">
+                <img src="images/PassGen Logo.png" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">Password Generator</h3>
+                <p>Creates a randomized string acquired from user confirms to output a password</p>
+            </div>
+            <div class="uk-card-footer">
+                <a onclick="window.location.href= `https://poncm032.github.io//wk3/Develop/index.html`;"
+                    class="uk-button uk-button-text">Visit Site</a>
+            </div>
         </div>
-      <div class="uk-card-body">
-        <h3 class="uk-card-title">Password Generator</h3>
-          <p>WIP</p>
-      </div>
-      <div class="uk-card-footer">
-          <a onclick="window.location.href=' ';" class="uk-button uk-button-text">Visit Site</a>
-      </div>
+        <div class="uk-card uk-card-default uk-width-1-2@m uk-margin-medium">
+            <div class="uk-card-media-top">
+                <img src="images/ReadMe Generator logo.png" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">ReadMe Generator</h3>
+                <p>From user input, creates a README.md file. Link goes to project repository</p>
+            </div>
+            <div class="uk-card-footer">
+                <a onclick="window.location.href='https://github.com/PONCM032/Good-Readme-Generator';"
+                    class="uk-button uk-button-text">Visit Site</a>
+            </div>
+        </div>
+
     </div>
-  
-  </div>    
 
     <div class="footer" id="footer">
         <div class="row">
@@ -78,4 +97,5 @@
         </div>
     </div>
 </body>
+
 </html>
