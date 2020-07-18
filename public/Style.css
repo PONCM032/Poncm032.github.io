@@ -55,5 +55,5 @@ html {
 }
 
 #portfolioDiv {
-    align-items: center;
+    justify-content: center;
 }
